@@ -9,9 +9,13 @@
 {
   # https://devenv.sh/packages/
   packages = with pkgs; [
-    cmake
-    gnumake
     git
+    gnumake
+    cmake
+    clang
+    clang-tools
+    valgrind
+    # misc
     typos-lsp
     nixfmt
     taplo
@@ -28,6 +32,7 @@
   # https://devenv.sh/git-hooks/
   git-hooks.hooks = {
     typos.enable = true;
+    clang-format.enable = true;
   };
 
   # See full reference at https://devenv.sh/reference/options/
